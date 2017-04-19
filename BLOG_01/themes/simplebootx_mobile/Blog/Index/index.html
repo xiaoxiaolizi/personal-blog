@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,maximum-scale=1">
+    <meta name="keywords" content="个人博客,向丽个人博客,个人网站,web前端工程师,向丽">
+    <meta name="description" content="向丽个人博客,是一个分享学习web前端的成长历程和心得体会，关注向丽博客，一起参与技术探讨和学习，了解最新趋势和下载免费web学习资源等的个人原创网站">
+    <title>向丽个人博客--一个半路出家行走在web前端道路的女程序猿的学习成长之路</title>
+    <link rel="stylesheet" href="__PUBLIC__/blog-m/css/reset.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/blog-m/css/common.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/blog-m/css/index.css"/>
+</head>
+<body>
+   <div class="header">
+       <header>
+           <img src="__PUBLIC__/blog-m/img/logo3.png" alt="" class="lf"/>
+           <img src="__PUBLIC__/blog-m/img/icon-s_r3_c14.png" alt="" class="rf m"/>
+       </header>
+   </div>
+   <nav>
+       <ul class="mainM">
+           <tc_include file="Public:blog-nav" />
+       </ul>
+   </nav>
+   <section>
+
+       <div class="content-left lf">
+           <h1 class="new_blog">文章推荐</h1>
+           <foreach name="recommended" item="vo" >
+                   <div class="blogList">
+                       <h2 class="article-title"><span>→</span><a href="articelDetail.html?term_id=4&id={$vo.id}&hits={$vo.post_hits}">{$vo.post_title} </a></h2>
+                       <php>
+                           $smeta=json_decode($vo['smeta'],true);
+                       </php>
+                       <div class="lf img">
+                           <img src="{:sp_get_asset_upload_path($smeta['thumb'])}" />
+                       </div>
+                       <div class="rf article-content">
+                          <p> <if condition="$vo.post_excerpt !='' "> {$vo.post_excerpt}
+                              <else />  {$vo.post_content}
+                          </if></p>
+                           <p class="readmore rf"><a href="articelDetail.html?term_id=4&id={$vo.id}&hits={$vo.post_hits}">阅读全文>></a></p>
+                       </div>
+                       <p class="dateview lf">
+                           <span><img src="__PUBLIC__/blog-m/img/timebg.png" alt=""/> {$vo.post_modified}</span>
+                           <span>阅读({$vo.post_hits})</span>
+                           <span>评论数(<span id = "sourceId::{$vo.id}" class = "cy_cmt_count" ></span>)</span>
+                         <!---  <span>评论数(<span id = "url::http://www.lizi5825.com/articelDetail.html?term_id=4&id={$vo.id}" class = "cy_cmt_count" ></span>)</span>-->
+                           <script id="cy_cmt_num" src="http://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cysUtSuOV">
+                           </script>
+
+                       </p>
+                   </div>
+           </foreach>
+
+       </div>
+
+   </section>
+
+   <div class="footer">
+       <footer>
+           <tc_include file="Public:blog-footer" />
+       </footer>
+   </div>
+
+   <script src="__PUBLIC__/blog-m/js/jquery-1.11.3.js"></script>
+   <script src="__PUBLIC__/blog-m/js/common.js"></script>
+   <script src="__PUBLIC__/blog-m/js/index.js"></script>
+   <script>
+
+   </script>
+
+</body>
+</html>

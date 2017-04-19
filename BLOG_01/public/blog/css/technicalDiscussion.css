@@ -1,0 +1,123 @@
+.lf{
+    float:left;
+}
+
+.articleList{
+    width:100%;
+    height:auto;
+    overflow:hidden;
+    padding:20px;
+    border-bottom:1px dashed #ccc;
+}
+.articleList:hover{
+    background:#F7FCF6;
+    box-shadow: 10px 10px 10px 0px #ccc;
+    border-radius:5px;
+}
+.header-title{
+    width:100%;
+    max-height:30px;
+    font-size:1.3rem;
+    padding:10px;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    color:#555;
+}
+.articleList>p{
+    padding:10px;
+    width:100%;
+    overflow:hidden;
+    color:#777;
+}
+.articleList p>span{
+    float:left;
+    margin-right:5%;
+}
+.contents-detail{
+    width:100%;
+    overflow:hidden;
+    padding:0 10px;
+}
+.contents-detail .img{
+    max-width:15%;
+    max-height:220px;
+}
+.contents-detail>.img img{
+    width:100%;
+    max-height:220px;
+}
+.contents-detail .containers{
+    width:82%;
+    float:right;
+    margin-right:1%;
+
+}
+.contents-detail .containers>p{
+    max-height:90px;
+    display:-webkit-box !important;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    word-break:break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp:4;
+    margin-bottom:10px;
+    color:#666;
+    line-height:22px;
+}
+.contents-detail .containers>div{
+    width:100%;
+    overflow:hidden;
+}
+.contents-detail .containers>div a{
+    width:100px;
+    height:30px;
+    line-height:30px;
+    float:right;
+    background:#00CC66;
+    text-align:center;
+    color:#fff;
+    margin-top:1%;
+}
+
+.pages{
+    width:100%;
+    padding:20px 0;
+    overflow:hidden;
+}
+.pagesList{
+    float:right;
+    width:80%;
+    overflow:hidden;
+}
+.pagesList li{
+    float:left;
+    width:80px;
+    height:30px;
+    line-height:30px;
+    border:1px solid #ccc;
+    border-radius:50%;
+    text-align:center;
+    cursor:pointer;
+    margin:5px;
+}
+
+.pagesList li:hover{
+    background:#FF9900;
+}
+.pagesList li.active{
+    background:#FF9900;
+    color:#fff;
+}
+
+.pagesList li:hover a{
+    color:#fff;
+}
+
+
+
+
+
+
+
+

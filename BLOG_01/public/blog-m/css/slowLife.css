@@ -1,0 +1,33 @@
+.contents-detail .containers{
+    width:72%;
+    float:left;
+    margin-left:1%;
+
+}
+.containersBox{
+    overflow:hidden;
+}
+.articleList{
+    float:left;
+    width:100%;
+    height:auto;
+    overflow:hidden;
+    padding:8px;
+    border-bottom:1px dashed #ccc;
+}
+.articleList:hover{
+    background:#F7FCF6;
+    box-shadow: 10px 10px 10px 0px #ccc;
+    border-radius:5px;
+}
+.articleList:nth-child(odd){
+}
+.contents-detail .img{
+    max-width:25%;
+}
+.contents-detail .containers{
+    width:70%;
+    float:right;
+    margin-right:1%;
+
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,maximum-scale=1">
+    <meta name="keywords" content="个人博客,向丽个人博客,个人网站,web前端工程师,向丽">
+    <meta name="description" content="向丽个人博客,是一个分享学习web前端的成长历程和心得体会，关注向丽博客，一起参与技术探讨和学习，了解最新趋势和下载免费web学习资源等的个人原创网站">
+    <title>诗和远方--一个半路出家行走在web前端道路的女程序猿的学习成长之路</title>
+    <link rel="stylesheet" href="__PUBLIC__/blog-m/css/reset.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/blog-m/css/common.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/blog-m/css/articelDetail.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/blog-m/css/technicalDiscussion.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/blog-m/css/slowLife.css"/>
+</head>
+<body>
+<div class="header">
+    <header>
+        <tc_include file="Public:blog-header" />
+    </header>
+</div>
+<nav class="detail-nav">
+    <ul class="mainM">
+        <tc_include file="Public:blog-nav" />
+    </ul>
+    <ul class="nav-list">
+        <li class="active"><a href="index.html">首页</a></li>
+        <li><a href="#">诗和远方</a></li>
+    </ul>
+</nav>
+<section>
+    <div class="content-left lf">
+        <div class="containersBox">
+            <foreach name="all_posts['posts']" item="vo">
+                <div class="articleList">
+                    <h1 class="header-title"><a href="articelDetail.html?term_id=5&id={$vo.object_id}&hits={$vo.post_hits}">{$vo.post_title}</a></h1>
+                    <p>
+                        <span>发布时间：<b>{$vo.post_date}</b></span>
+                        <span>作者:<b>{$vo.user_nicename}</b></span>
+                        <span>阅读({$vo.post_hits})</span>
+                        <span id = "articelDetail.html?term_id=5&id={$vo.object_id}&hits={$vo.post_hits}" class = "cy_cmt_count" ></span>
+                        <script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cysUtSuOV">
+
+                        </script>
+                    </p>
+                    <div class="contents-detail">
+                        <php>
+                            $smeta=json_decode($vo['smeta'],true);
+                        </php>
+                        <div class="lf img">
+                            <img src="{:sp_get_asset_upload_path($smeta['thumb'])}" />
+                        </div>
+                        <div class="containers">
+                                 <p>
+                                     <if condition="$vo.post_excerpt !='' "> {$vo.post_excerpt}
+                                         <else />  {$vo.post_content}
+                                     </if>
+                                 </p>
+                            <div><a href="articelDetail.html?term_id=5&id={$vo.object_id}&hits={$vo.post_hits}">详细信息 》</a></div>
+                        </div>
+                    </div>
+                </div>
+
+            </foreach>
+        </div>
+
+
+        <div class="pages">
+            <ul class="pagesList">
+                {$all_posts['page']}
+                <!--- <li><a href="#"><</a> </li>
+                 <li><a href="#">1</a> </li>
+                 <li><a href="#">2</a> </li>
+                 <li><a href="#">3</a> </li>
+                 <li><a href="#">...</a> </li>
+                 <li><a href="#">></a> </li>-->
+            </ul>
+        </div>
+
+    </div>
+    </aside>
+</section>
+<div class="footer">
+    <footer>
+        <tc_include file="Public:blog-footer" />
+    </footer>
+</div>
+
+<script src="__PUBLIC__/blog-m/js/jquery-1.11.3.js"></script>
+<script src="__PUBLIC__/blog-m/js/common.js"></script>
+<script src="__PUBLIC__/blog-m/js/technicalDiscussion.js"></script>
+<script>
+
+</script>
+</body>
+</html>

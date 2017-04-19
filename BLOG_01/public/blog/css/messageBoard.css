@@ -1,0 +1,31 @@
+.body{
+    background:#F7FCF6;
+}
+section{
+    width:90%;
+    margin:20px auto;
+
+    overflow:hidden;
+}
+#SOHUCS .invalidity{
+    padding:0;
+}
+.content-left{
+    width:80%;
+    min-height:500px;
+    margin-bottom:20px;
+}
+.content-left .contents{
+    width:100%;
+}
+.content-left .contents ul{
+    width:96%;
+    padding:2%;
+}
+.content-right{
+    width:10%;
+    min-height:500px;
+}
+.detail-nav ul{
+    background:#F7FCF6;
+}

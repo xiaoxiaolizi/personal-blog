@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,maximum-scale=1">
+    <meta name="keywords" content="个人博客,向丽个人博客,个人网站,web前端工程师,向丽">
+    <meta name="description" content="向丽个人博客,是一个分享学习web前端的成长历程和心得体会，关注向丽博客，一起参与技术探讨和学习，了解最新趋势和下载免费web学习资源等的个人原创网站">
+    <title>留言板--一个半路出家行走在web前端道路的女程序猿的学习成长之路</title>
+    <link rel="stylesheet" href="__PUBLIC__/blog-m/css/reset.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/blog-m/css/common.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/blog-m/css/messageBoard.css"/>
+</head>
+<body style="background:#F7FCF6;">
+<div class="header">
+    <header>
+        <tc_include file="Public:blog-header" />
+    </header>
+</div>
+
+<nav class="detail-nav">
+    <ul class="mainM">
+        <tc_include file="Public:blog-nav" />
+    </ul>
+    <ul class="nav-list">
+        <li class="active"><a href="index.html">首页</a></li>
+        <li><a href="#">留言板</a></li>
+    </ul>
+</nav>
+
+<section>
+    <div class="content-left lf">
+        <div class="contents">
+            <div class="comments">
+                <!--PC和WAP自适应版-->
+                <div id="SOHUCS" sid="请将此处替换为配置SourceID的语句" ></div>
+                <script type="text/javascript">
+                    (function(){
+                        var appid = 'cysUtSuOV';
+                        var conf = '91cf3c449678570da0f764211eb0725f';
+                        var width = window.innerWidth || document.documentElement.clientWidth;
+                        if (width < 960) {
+                            window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("http://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })();
+                </script>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="footer">
+    <footer>
+        <tc_include file="Public:blog-footer" />
+    </footer>
+</div>
+
+<script src="__PUBLIC__/blog-m/js/jquery-1.11.3.js"></script>
+<script src="__PUBLIC__/blog-m/js/common.js"></script>
+<script src="__PUBLIC__/blog-m/js/about.js"></script>
+</body>
+</html>

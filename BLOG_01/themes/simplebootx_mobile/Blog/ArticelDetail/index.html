@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,maximum-scale=1">
+    <meta name="keywords" content="个人博客,向丽个人博客,个人网站,web前端工程师,向丽">
+
+    <meta name="description" content="向丽个人博客,是一个分享学习web前端的成长历程和心得体会，关注向丽博客，一起参与技术探讨和学习，了解最新趋势和下载免费web学习资源等的个人原创网站">
+
+    <link rel="stylesheet" href="__PUBLIC__/blog-m/css/reset.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/blog-m/css/common.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/blog-m/css/articelDetail.css"/>
+
+    <foreach name="ArticleList" item="vo" >
+        <title>{$vo.post_title}</title>
+</head>
+<body>
+<div class="header">
+    <header>
+        <tc_include file="Public:blog-header" />
+    </header>
+</div>
+<nav class="detail-nav">
+    <ul class="mainM">
+        <tc_include file="Public:blog-nav" />
+    </ul>
+    <ul class="nav-list">
+        <li class="active"><a href="index.html">首页</a></li>
+        <li><a href="#">{$tme}</a></li>
+    </ul>
+</nav>
+<section>
+    <div class="content-left lf">
+
+            <div class="containerBox">
+                <h1 class="post-title">{$vo.post_title}</h1>
+                <div class="detail">
+                    <p class="lf">文章分类：
+
+                        <foreach name="termname" item="term">
+                            <a href="study.html?term_id={$term.id}" data-i="{$term.id}">
+                                <span>{$term.name}</span>
+                            </a>
+                        </foreach>
+
+                    </p>
+                    <span class="lf">阅读({$vo.post_hits})</span>
+                    <span class="rf">作者({$authorName})</span>
+                </div>
+                <div class="contents">
+                    {$vo.post_content}
+                </div>
+            </div>
+        <div class="detail">
+            <span class="lf"><img src="__PUBLIC__/blog-m/img/timebg.png" alt=""/>{$vo.post_modified}</span>
+        </div>
+           <p class="post_like">
+               <a href="{:U('Blog/ArticelDetail/do_like',array('id'=>$object_id))}" class="js-count-btn"><i class="fa fa-thumbs-up"></i><span class="count">点赞</span></a>
+           </p>
+
+        </foreach>
+        <div class="comments">
+
+            <!-- 代码1：放在页面需要展示的位置  -->
+            <!-- 如果您配置过sourceid，建议在div标签中配置sourceid、cid(分类id)，没有请忽略  -->
+            <div id="cyReward" role="cylabs" data-use="reward" sid="{$sourceId}"></div>
+            <span class="commentNum">评论数( <a href="#SOHUCS" id="changyan_parti_unit"></a>人参与,<a href="#SOHUCS" id="changyan_count_unit"></a>条评论)</span>
+            <script type="text/javascript" src="http://assets.changyan.sohu.com/upload/plugins/plugins.count.js">
+            </script>
+            <!--PC和WAP自适应版-->
+            <div id="SOHUCS" sid="{$sourceId}" ></div>
+            <script type="text/javascript">
+                (function(){
+                    var appid = 'cysUtSuOV';
+                    var conf = '91cf3c449678570da0f764211eb0725f';
+                    var width = window.innerWidth || document.documentElement.clientWidth;
+                    if (width < 960) {
+                        window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("http://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })();
+            </script>
+            <!-- 代码2：用来读取评论框配置，此代码需放置在代码1之后。 -->
+            <!-- 如果当前页面有评论框，代码2请勿放置在评论框代码之前。 -->
+            <!-- 如果页面同时使用多个实验室项目，以下代码只需要引入一次，只配置上面的div标签即可 -->
+            <script type="text/javascript" charset="utf-8" src="https://changyan.itc.cn/js/lib/jquery.js"></script>
+            <script type="text/javascript" charset="utf-8" src="https://changyan.sohu.com/js/changyan.labs.https.js?appid=cysUtSuOV"></script>
+        </div>
+
+    </div>
+    <div class="goTop">
+        <a href="#"> <img src="__PUBLIC__/blog-m/img/top.png" alt=""/></a>
+    </div>
+</section>
+<div class="footer">
+    <footer>
+        <tc_include file="Public:blog-footer" />
+    </footer>
+</div>
+
+<script src="__PUBLIC__/blog-m/js/jquery-1.11.3.js"></script>
+<script src="__PUBLIC__/blog-m/js/common.js"></script>
+<script src="__PUBLIC__/blog-m/js/about.js"></script>
+<script>
+    $(function(){
+        $('.navigatelist li').on('click','a',function(e){
+            e.preventDefault();
+            var term_id=$(this).attr('data-i');
+            window.location.href="study.html?term_id="+term_id;
+        })
+
+    })
+</script>
+</body>
+</html>

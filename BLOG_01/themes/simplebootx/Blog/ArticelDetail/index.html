@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,maximum-scale=1">
+    <meta name="keywords" content="个人博客,向丽个人博客,个人网站,web前端工程师,向丽">
+
+    <meta name="description" content="向丽个人博客,是一个分享学习web前端的成长历程和心得体会，关注向丽博客，一起参与技术探讨和学习，了解最新趋势和下载免费web学习资源等的个人原创网站">
+
+    <link rel="stylesheet" href="__PUBLIC__/blog/css/reset.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/blog/css/common.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/blog/css/articelDetail.css"/>
+
+    <foreach name="ArticleList" item="vo" >
+        <title>{$vo.post_title}</title>
+</head>
+<body>
+<div class="header">
+    <header>
+        <tc_include file="Public:blog-header" />
+    </header>
+</div>
+<nav class="detail-nav">
+    <ul class="nav-list">
+        <li class="active"><a href="index.html">首页</a></li>
+        <li><a href="#">{$tme}</a></li>
+    </ul>
+   <!-- <ul class="location">
+        <li><a href="#">心得笔记</a></li>
+        <li class="to">》</li>
+        <li><a href="#">学无止境</a></li>
+        <li class="to">》</li>
+        <li><img src="__PUBLIC__/blog/img/5849.png" alt=""/><span>您当前的位置：</span><a href="index.html">首页</a></li>
+    </ul>-->
+</nav>
+<section>
+    <div class="content-left lf">
+
+            <div class="containerBox">
+                <h1 class="post-title">{$vo.post_title}</h1>
+                <div class="detail">
+                    <span><img src="__PUBLIC__/blog/img/timebg.png" alt=""/>{$vo.post_modified}</span>
+                    <span>文章分类：
+
+                             <foreach name="termname" item="term">
+                                 <a href="study.html?term_id={$term.id}" data-i="{$term.id}">
+                               <span>{$term.name}</span>
+                                 </a>
+                              </foreach>
+
+                    </span>
+                    <span>阅读({$vo.post_hits})</span>
+                    <span>作者({$authorName})</span>
+                </div>
+                <div class="contents">
+                    {$vo.post_content}
+                </div>
+            </div>
+           <p class="post_like">
+               <a href="{:U('Blog/ArticelDetail/do_like',array('id'=>$object_id))}" class="js-count-btn"><i class="fa fa-thumbs-up"></i><span class="count">点赞</span></a>
+           </p>
+
+        </foreach>
+        <div class="comments">
+
+            <!-- 代码1：放在页面需要展示的位置  -->
+            <!-- 如果您配置过sourceid，建议在div标签中配置sourceid、cid(分类id)，没有请忽略  -->
+            <div id="cyReward" role="cylabs" data-use="reward" sid="{$sourceId}"></div>
+            <span class="commentNum">评论数( <a href="#SOHUCS" id="changyan_parti_unit"></a>人参与,<a href="#SOHUCS" id="changyan_count_unit"></a>条评论)</span>
+            <script type="text/javascript" src="http://assets.changyan.sohu.com/upload/plugins/plugins.count.js">
+            </script>
+            <!--PC和WAP自适应版-->
+            <div id="SOHUCS" sid="{$sourceId}" ></div>
+            <script type="text/javascript">
+                (function(){
+                    var appid = 'cysUtSuOV';
+                    var conf = '91cf3c449678570da0f764211eb0725f';
+                    var width = window.innerWidth || document.documentElement.clientWidth;
+                    if (width < 960) {
+                        window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("http://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })();
+            </script>
+            <!-- 代码2：用来读取评论框配置，此代码需放置在代码1之后。 -->
+            <!-- 如果当前页面有评论框，代码2请勿放置在评论框代码之前。 -->
+            <!-- 如果页面同时使用多个实验室项目，以下代码只需要引入一次，只配置上面的div标签即可 -->
+            <script type="text/javascript" charset="utf-8" src="https://changyan.itc.cn/js/lib/jquery.js"></script>
+            <script type="text/javascript" charset="utf-8" src="https://changyan.sohu.com/js/changyan.labs.https.js?appid=cysUtSuOV"></script>
+        </div>
+
+    </div>
+    <aside class="content-right rf">
+         <div class="navigate">
+            <h1>栏目频道</h1>
+               <ul class="navigatelist">
+                   <foreach name="type_term" item="vo">
+                       <li class="greybg"><a href="study.html" data-i="{$vo['term_id']}">{$vo.name}</a></li>
+                   </foreach>
+
+               </ul>
+         </div>
+         <div class="hot-comment">
+             <h1><span>热评</span>文章 <i></i></h1>
+             <!-- 代码1：放在页面需要展示的位置  -->
+             <!-- 如果您配置过sourceid，建议在div标签中配置sourceid、cid(分类id)，没有请忽略  -->
+             <div id="cyHotnews" role="cylabs" data-use="hotnews"></div>
+         </div>
+        <div class="click-ranking">
+            <h1>点击<span>排行</span> <i></i></h1>
+            <ul>
+                <foreach name="sort" item="vo">
+                    <li><a href="articelDetail.html?term_id=4&id={$vo.id}&hits={$vo.post_hits}">{$vo.post_title}</a></li>
+                </foreach>
+
+            </ul>
+        </div>
+
+        <div class="bdsharebuttonbox bdshare-button-style1-32" data-bd-bind="1488693175859">
+            <a href="http://www.lizi5825.com/#" class="bds_more" data-cmd="more"></a>
+            <a href="http://www.lizi5825.com/#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+            <a href="http://www.lizi5825.com/#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="http://www.lizi5825.com/#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+            <a href="http://www.lizi5825.com/#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+            <a href="http://www.lizi5825.com/#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+        </div>
+
+        <div class="click-ranking">
+            <h1> <span>热评</span>用户</h1>
+            <!-- 代码1：放在页面需要展示的位置  -->
+            <!-- 如果您配置过sourceid，建议在div标签中配置sourceid、cid(分类id)，没有请忽略  -->
+            <div id="cyHotusers" role="cylabs" data-use="hotusers"></div>
+            <script type="text/javascript" charset="utf-8" src="https://changyan.itc.cn/js/lib/jquery.js"></script>
+            <script type="text/javascript" charset="utf-8" src="https://changyan.sohu.com/js/changyan.labs.https.js?appid=cysUtSuOV"></script>
+
+        </div>
+
+
+        
+        
+    </aside>
+    <div class="goTop">
+        <a href="#"> <img src="__PUBLIC__/blog/img/top.png" alt=""/></a>
+    </div>
+</section>
+<div class="footer">
+    <footer>
+        <tc_include file="Public:blog-footer" />
+    </footer>
+</div>
+
+<script src="__PUBLIC__/blog/js/jquery-1.11.3.js"></script>
+<script src="__PUBLIC__/blog/js/common.js"></script>
+<script src="__PUBLIC__/blog/js/about.js"></script>
+<script>
+    $(function(){
+        $('.navigatelist li').on('click','a',function(e){
+            e.preventDefault();
+            var term_id=$(this).attr('data-i');
+            window.location.href="study.html?term_id="+term_id;
+        })
+
+    })
+</script>
+</body>
+</html>

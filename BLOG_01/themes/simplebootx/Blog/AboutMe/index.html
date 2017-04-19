@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,maximum-scale=1">
+    <meta name="keywords" content="个人博客,向丽个人博客,个人网站,web前端工程师,向丽">
+    <meta name="description" content="向丽个人博客,是一个分享学习web前端的成长历程和心得体会，关注向丽博客，一起参与技术探讨和学习，了解最新趋势和下载免费web学习资源等的个人原创网站">
+    <title>关于我--一个半路出家行走在web前端道路的女程序猿的学习成长之路</title>
+    <link rel="stylesheet" href="__PUBLIC__/blog/css/reset.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/blog/css/common.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/blog/css/about.css"/>
+</head>
+<body style="background:#fff;">
+<div class="header">
+    <header>
+        <tc_include file="Public:blog-header" />
+    </header>
+</div>
+
+    <nav class="detail-nav">
+        <ul class="nav-list">
+            <li class="active"><a href="index.html">首页</a></li>
+            <li><a href="#">关于我</a></li>
+        </ul>
+        <ul class="addr-list">
+          <img src="__PUBLIC__/blog/img/5849.png" alt=""/>您当前位置：<span>关于我</span>
+        </ul>
+    </nav>
+
+<section>
+    <div class="content-left rf">
+            <div class="contents">
+                <foreach name="aboutMe" item="vo" >
+                <div class="aboutMe">
+                   {$vo.post_content}
+                </div>
+                </foreach>
+            </div>
+
+
+
+    </div>
+    <aside class="content-right lf">
+        <foreach name="hostuser" item="vo">
+          <div class="touxiang">
+              <img src="__PUBLIC__/blog/img/{$vo.img2}" alt=""/>
+              <p>网名：<span>{$vo.webname}</span></p>
+              <p>姓名：<span>{$vo.uname}</span></p>
+              <p>生日：<span>{$vo.birthday}</span></p>
+              <p>家乡：<span>{$vo.hometown}</span></p>
+              <p>工作地点：<span>{$vo.jobaddr}</span></p>
+              <p>职业：<span>{$vo.job}</span></p>
+              <p>邮箱：<span>{$vo.email}</span></p>
+          </div>
+        </foreach>
+    </aside>
+</section>
+<div class="footer">
+    <footer>
+        <tc_include file="Public:blog-footer" />
+    </footer>
+</div>
+
+<script src="__PUBLIC__/blog/js/jquery-1.11.3.js"></script>
+<script src="__PUBLIC__/blog/js/common.js"></script>
+<script src="__PUBLIC__/blog/js/about.js"></script>
+</body>
+</html>

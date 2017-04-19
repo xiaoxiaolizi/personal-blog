@@ -1,0 +1,36 @@
+.contents-detail .containers{
+    width:72%;
+    float:left;
+    margin-left:1%;
+
+}
+.containersBox{
+    overflow:hidden;
+    padding:20px 0;
+}
+.articleList{
+    float:left;
+    width:45%;
+    height:auto;
+    overflow:hidden;
+    padding:10px;
+    margin:10px 0;
+    border-bottom:1px dashed #ccc;
+}
+.articleList:hover{
+    background:#F7FCF6;
+    box-shadow: 10px 10px 10px 0px #ccc;
+    border-radius:5px;
+}
+.articleList:nth-child(odd){
+    margin-right:2%;
+}
+.contents-detail .img{
+    max-width:20%;
+}
+.contents-detail .containers{
+    width:78%;
+    float:right;
+    margin-right:1%;
+
+}

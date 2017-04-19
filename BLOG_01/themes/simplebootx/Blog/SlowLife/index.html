@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,maximum-scale=1">
+    <meta name="keywords" content="个人博客,向丽个人博客,个人网站,web前端工程师,向丽">
+    <meta name="description" content="向丽个人博客,是一个分享学习web前端的成长历程和心得体会，关注向丽博客，一起参与技术探讨和学习，了解最新趋势和下载免费web学习资源等的个人原创网站">
+    <title>诗和远方--一个半路出家行走在web前端道路的女程序猿的学习成长之路</title>
+    <link rel="stylesheet" href="__PUBLIC__/blog/css/reset.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/blog/css/common.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/blog/css/articelDetail.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/blog/css/technicalDiscussion.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/blog/css/slowLife.css"/>
+</head>
+<body>
+<div class="header">
+    <header>
+        <tc_include file="Public:blog-header" />
+    </header>
+</div>
+<nav class="detail-nav">
+    <ul class="nav-list">
+        <li class="active"><a href="index.html">首页</a></li>
+        <li><a href="#">诗和远方</a></li>
+    </ul>
+    <ul class="addr-list">
+      <img src="__PUBLIC__/blog/img/5849.png" alt=""/>您当前位置：<span>诗和远方</span>
+    </ul>
+</nav>
+<section>
+    <div class="content-left lf">
+        <div class="containersBox">
+            <foreach name="all_posts['posts']" item="vo">
+                <div class="articleList">
+                    <h1 class="header-title"><a href="articelDetail.html?term_id=5&id={$vo.object_id}&hits={$vo.post_hits}">{$vo.post_title}</a></h1>
+                    <p>
+                        <span>发布时间：<b>{$vo.post_date}</b></span>
+                        <span>作者:<b>{$vo.user_nicename}</b></span>
+                        <span>阅读({$vo.post_hits})</span>
+                        <span id = "articelDetail.html?term_id=5&id={$vo.object_id}&hits={$vo.post_hits}" class = "cy_cmt_count" ></span>
+                        <script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cysUtSuOV">
+
+                        </script>
+                    </p>
+                    <div class="contents-detail">
+                        <php>
+                            $smeta=json_decode($vo['smeta'],true);
+                        </php>
+                        <div class="lf img">
+                            <img src="{:sp_get_asset_upload_path($smeta['thumb'])}" />
+                        </div>
+                        <div class="containers">
+                                 <p>
+                                     <if condition="$vo.post_excerpt !='' "> {$vo.post_excerpt}
+                                         <else />  {$vo.post_content}
+                                     </if>
+                                 </p>
+                            <div><a href="articelDetail.html?term_id=5&id={$vo.object_id}&hits={$vo.post_hits}">详细信息 》</a></div>
+                        </div>
+                    </div>
+                </div>
+
+            </foreach>
+        </div>
+
+
+        <div class="pages">
+            <ul class="pagesList">
+                {$all_posts['page']}
+                <!--- <li><a href="#"><</a> </li>
+                 <li><a href="#">1</a> </li>
+                 <li><a href="#">2</a> </li>
+                 <li><a href="#">3</a> </li>
+                 <li><a href="#">...</a> </li>
+                 <li><a href="#">></a> </li>-->
+            </ul>
+        </div>
+
+    </div>
+    <aside class="content-right rf">
+       <!-- <div class="navigate">
+            <h1>栏目频道</h1>
+            <ul class="navigatelist">
+                <foreach name="type_term" item="vo">
+                    <li class="greybg"><a href="#" data-i="{$vo['term_id']}">{$vo.name}</a></li>
+                </foreach>
+            </ul>
+        </div>-->
+        <div class="hot-comment">
+            <h1><span>热评</span>文章 <i></i></h1>
+            <!-- 代码1：放在页面需要展示的位置  -->
+            <!-- 如果您配置过sourceid，建议在div标签中配置sourceid、cid(分类id)，没有请忽略  -->
+            <div id="cyHotnews" role="cylabs" data-use="hotnews"></div>
+        </div>
+        <div class="click-ranking">
+            <h1>点击<span>排行</span> <i></i></h1>
+            <ul>
+                <foreach name="sort" item="vo">
+                    <li><a href="articelDetail.html?term_id=4&id={$vo.id}&hits={$vo.post_hits}">{$vo.post_title}</a></li>
+                </foreach>
+            </ul>
+        </div>
+
+        <div class="bdsharebuttonbox bdshare-button-style1-32" data-bd-bind="1488693175859">
+            <a href="http://www.lizi5825.com/#" class="bds_more" data-cmd="more"></a>
+            <a href="http://www.lizi5825.com/#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+            <a href="http://www.lizi5825.com/#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="http://www.lizi5825.com/#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+            <a href="http://www.lizi5825.com/#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+            <a href="http://www.lizi5825.com/#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+        </div>
+
+        <div class="click-ranking">
+            <h1> <span>热评</span>用户</h1>
+            <!-- 代码1：放在页面需要展示的位置  -->
+            <!-- 如果您配置过sourceid，建议在div标签中配置sourceid、cid(分类id)，没有请忽略  -->
+            <div id="cyHotusers" role="cylabs" data-use="hotusers"></div>
+            <script type="text/javascript" charset="utf-8" src="https://changyan.itc.cn/js/lib/jquery.js"></script>
+            <script type="text/javascript" charset="utf-8" src="https://changyan.sohu.com/js/changyan.labs.https.js?appid=cysUtSuOV"></script>
+
+        </div>
+
+
+    </aside>
+</section>
+<div class="footer">
+    <footer>
+        <tc_include file="Public:blog-footer" />
+    </footer>
+</div>
+
+<script src="__PUBLIC__/blog/js/jquery-1.11.3.js"></script>
+<script src="__PUBLIC__/blog/js/common.js"></script>
+<script src="__PUBLIC__/blog/js/technicalDiscussion.js"></script>
+<script>
+
+</script>
+</body>
+</html>

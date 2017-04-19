@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,maximum-scale=1">
+    <meta name="keywords" content="个人博客,向丽个人博客,个人网站,web前端工程师,向丽">
+    <meta name="description" content="向丽个人博客,是一个分享学习web前端的成长历程和心得体会，关注向丽博客，一起参与技术探讨和学习，了解最新趋势和下载免费web学习资源等的个人原创网站">
+    <title>向丽个人博客--一个半路出家行走在web前端道路的女程序猿的学习成长之路</title>
+    <link rel="stylesheet" href="__PUBLIC__/blog/css/reset.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/blog/css/common.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/blog/css/index.css"/>
+</head>
+<body>
+   <div class="header">
+       <header>
+           <img src="__PUBLIC__/blog/img/logo3.png" alt="" class="lf"/>
+           <div class="person_title1 lf">
+               <p>向丽的个人网站--个人博客</p>
+               <p>记录一个半路出家行走在web前端道路的女程序猿的学习成长之路</p>
+           </div>
+       </header>
+   </div>
+   <nav>
+       <ul>
+           <tc_include file="Public:blog-nav" />
+       </ul>
+   </nav>
+   <section>
+
+       <div class="content-left lf">
+           <h1 class="new_blog">文章推荐</h1>
+           <foreach name="recommended" item="vo" >
+                   <div class="blogList">
+                       <h2 class="article-title"><span>→</span><a href="articelDetail.html?term_id=4&id={$vo.id}&hits={$vo.post_hits}">{$vo.post_title} </a></h2>
+                       <php>
+                           $smeta=json_decode($vo['smeta'],true);
+                       </php>
+                       <div class="lf img">
+                           <img src="{:sp_get_asset_upload_path($smeta['thumb'])}" />
+                       </div>
+                       <div class="rf article-content">
+                          <p> <if condition="$vo.post_excerpt !='' "> {$vo.post_excerpt}
+                              <else />  {$vo.post_content}
+                          </if></p>
+                           <p class="readmore rf"><a href="articelDetail.html?term_id=4&id={$vo.id}&hits={$vo.post_hits}">阅读全文>></a></p>
+                       </div>
+                       <p class="dateview lf">
+                           <span><img src="__PUBLIC__/blog/img/timebg.png" alt=""/> {$vo.post_modified}</span>
+                           <span>阅读({$vo.post_hits})</span>
+                           <span>评论数(<span id = "sourceId::{$vo.id}" class = "cy_cmt_count" ></span>)</span>
+                         <!---  <span>评论数(<span id = "url::http://www.lizi5825.com/articelDetail.html?term_id=4&id={$vo.id}" class = "cy_cmt_count" ></span>)</span>-->
+                           <script id="cy_cmt_num" src="http://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cysUtSuOV">
+                           </script>
+
+                       </p>
+                   </div>
+           </foreach>
+
+       </div>
+
+        <aside class="content-right rf">
+            <audio controls autoplay loop>
+                <foreach name="audios" item="vo">
+                    <source src="__PUBLIC__/blog/audio/{$vo.url}"/>
+                </foreach>
+            </audio>
+             <div class="motto">
+                 <foreach name="mottos" item="vo">
+                   <p>{$vo.motto}</p>
+                 </foreach>
+             </div>
+
+             <div class="about">
+                 <foreach name="hostuser" item="vo">
+                    <img src="__PUBLIC__/blog/img/{$vo.img}" alt="" class="lf"/>
+                    <div class="lf">
+                        <p>网名：{$vo.webname}</p>
+                        <p>生日：{$vo.birthday}</p>
+                        <p>籍贯：{$vo.hometown}</p>
+                        <p>职业：{$vo.job}</p>
+                        <p>工作城市：{$vo.jobaddr}</p>
+                    </div>
+                 </foreach>
+             </div>
+
+            <div class="recommend">
+                 <h2 class="article-recommend">最新日志</h2>
+                <ul>
+                    <foreach name="ArticleList['posts']" item="vo">
+                        <li><img src="__PUBLIC__/blog/img/list.gif" alt=""/><a href="articelDetail.html?term_id=4&id={$vo.id}&hits={$vo.post_hits}">{$vo.post_title}</a></li>
+                    </foreach>
+                </ul>
+            </div>
+            <div class="bdsharebuttonbox bdshare-button-style1-32" data-bd-bind="1488693175859">
+                <a href="http://www.lizi5825.com/#" class="bds_more" data-cmd="more"></a>
+                <a href="http://www.lizi5825.com/#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+                <a href="http://www.lizi5825.com/#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+                <a href="http://www.lizi5825.com/#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+                <a href="http://www.lizi5825.com/#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+                <a href="http://www.lizi5825.com/#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+            </div>
+            <div class="attention">扫描二维码关注<span>向丽博客</span>官方微信账号</div>
+            <div class="qr">
+                <a href="http://www.lzi5825.com/" class="weChat">
+                    <img src="__PUBLIC__/blog/img/qrcode.jpg" alt=""/>
+                </a>
+            </div>
+        </aside>
+
+       <ul class="links">
+         <foreach name="links" item="vo">
+             <li><a href="{$vo.link_url}">{$vo.link_name}</a></li>
+         </foreach>
+       </ul>
+   </section>
+
+   <div class="footer">
+       <footer>
+           <tc_include file="Public:blog-footer" />
+       </footer>
+   </div>
+
+   <script src="__PUBLIC__/blog/js/jquery-1.11.3.js"></script>
+   <script src="__PUBLIC__/blog/js/common.js"></script>
+   <script src="__PUBLIC__/blog/js/index.js"></script>
+
+</body>
+</html>

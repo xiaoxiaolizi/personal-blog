@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,maximum-scale=1">
+    <meta name="keywords" content="个人博客,向丽个人博客,个人网站,web前端工程师,向丽">
+    <meta name="description" content="向丽个人博客,是一个分享学习web前端的成长历程和心得体会，关注向丽博客，一起参与技术探讨和学习，了解最新趋势和下载免费web学习资源等的个人原创网站">
+    <title>关于我--一个半路出家行走在web前端道路的女程序猿的学习成长之路</title>
+    <link rel="stylesheet" href="__PUBLIC__/blog-m/css/reset.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/blog-m/css/common.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/blog-m/css/about.css"/>
+</head>
+<body style="background:#fff;">
+<div class="header">
+    <header>
+        <tc_include file="Public:blog-header" />
+    </header>
+</div>
+
+    <nav class="detail-nav">
+        <ul class="mainM">
+            <tc_include file="Public:blog-nav" />
+        </ul>
+        <ul class="nav-list">
+            <li class="active"><a href="index.html">首页</a></li>
+            <li><a href="#">关于我</a></li>
+        </ul>
+    </nav>
+
+<section>
+    <div class="content-left rf">
+            <div class="contents">
+                <foreach name="aboutMe" item="vo" >
+                <div class="aboutMe">
+                   {$vo.post_content}
+                </div>
+                </foreach>
+            </div>
+
+
+
+    </div>
+</section>
+<div class="footer">
+    <footer>
+        <tc_include file="Public:blog-footer" />
+    </footer>
+</div>
+
+<script src="__PUBLIC__/blog-m/js/jquery-1.11.3.js"></script>
+<script src="__PUBLIC__/blog-m/js/common.js"></script>
+<script src="__PUBLIC__/blog-m/js/about.js"></script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+.lf{
+    float:left;
+}
+
+.articleList{
+    width:100%;
+    height:auto;
+    overflow:hidden;
+    border-bottom:1px dashed #ccc;
+}
+.articleList:hover{
+    background:#F7FCF6;
+    box-shadow: 10px 10px 10px 0px #ccc;
+    border-radius:5px;
+}
+.header-title{
+    width:100%;
+    max-height:30px;
+    font-size:1.1rem;
+    padding:8px;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    color:#555;
+}
+.articleList>p{
+    margin:5px;
+    width:100%;
+    overflow:hidden;
+    color:#777;
+    font-size:0.8rem;
+}
+.articleList p>span{
+    margin-right:3%;
+}
+.articleList p:last-child{
+    margin:10px;
+}
+.contents-detail{
+    width:100%;
+    overflow:hidden;
+}
+.contents-detail .img{
+    max-width:25%;
+    max-height:220px;
+}
+.contents-detail>.img img{
+    width:100%;
+    max-height:220px;
+}
+.contents-detail .containers{
+    width:72%;
+    float:right;
+    margin-right:1%;
+    font-size:0.9rem;
+}
+.contents-detail .containers>p{
+    max-height:90px;
+    display:-webkit-box !important;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    word-break:break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp:4;
+    margin-bottom:10px;
+    color:#666;
+    line-height:22px;
+}
+.contents-detail .containers>div{
+    width:100%;
+    overflow:hidden;
+}
+.contents-detail .containers>div a{
+    width:90px;
+    height:30px;
+    line-height:30px;
+    float:right;
+    background:#00CC66;
+    text-align:center;
+    color:#fff;
+    margin-top:1%;
+    margin-bottom:2%;
+}
+
+.pages{
+    width:100%;
+    overflow:hidden;
+}
+.pagesList{
+    float:right;
+    width:100%;
+    overflow:hidden;
+}
+.pagesList li{
+    float:left;
+    width:30px;
+    height:30px;
+    line-height:30px;
+    border:1px solid #ccc;
+    border-radius:50%;
+    text-align:center;
+    cursor:pointer;
+    margin:5px;
+}
+
+.pagesList li:hover{
+    background:#FF9900;
+}
+.pagesList li.active{
+    background:#FF9900;
+    color:#fff;
+}
+
+.pagesList li:hover a{
+    color:#fff;
+}
+
+
+
+
+
+
+
+

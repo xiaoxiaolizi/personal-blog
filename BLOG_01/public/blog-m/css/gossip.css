@@ -1,0 +1,90 @@
+.pages{
+    width:100%;
+    padding:20px 0;
+    overflow:hidden;
+}
+.pagesList{
+    float:right;
+    width:30%;
+    overflow:hidden;
+}
+.pagesList li{
+    float:left;
+    width:30px;
+    height:30px;
+    line-height:30px;
+    border:1px solid #ccc;
+    border-radius:50%;
+    text-align:center;
+    cursor:pointer;
+    margin:5px;
+}
+
+.pagesList li:hover{
+    background:#FF9900;
+}
+
+.pagesList li:hover a{
+    color:#fff;
+}
+
+.content-left{
+    width:100%;
+    min-height:500px;
+}
+.gossipBox{
+    padding:10px 0;
+    border-bottom:1px dotted #ccc;
+}
+.gossip-content{
+    width:95%;
+    min-height:50px;
+    margin:10px auto;
+    background:#93C45F;
+    color:#fff;
+    border-radius:10px;
+    position:relative;
+    padding:10px;
+
+}
+.gossip-content p{
+    line-height:24px;
+
+}
+.gossip-content p span{
+    background-color:#93C45F!important;
+    color:#fff!important;
+}
+.gossip-content p a{
+    background-color:#93C45F!important;
+}
+
+.floatBOx{
+    width:100%;
+    height:25px;
+    line-height:25px;
+}
+.dot{
+    float:left;
+    width:25px;
+    height:25px;
+    line-height:25px;
+    border-radius:50%;
+    background:#FF9900;
+    text-align:center;
+    color:#fff;
+}
+.gossip-title{
+    float:left;
+    margin-left:10px;
+    width:50%;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+.gossip-time{
+    float:left;
+    font-size:0.8rem;
+    color:#ccc;
+}
+

@@ -1,0 +1,44 @@
+section{
+    width:95%;
+    margin:10px auto;
+    overflow:hidden;
+    background:#F7FCF6;
+}
+.content-left{
+    width:100%;
+    margin-bottom:10px;
+}
+.content-left .contents{
+    width:100%;
+}
+.content-left .contents ul{
+    width:100%;
+    padding:2%;
+}
+.content-right{
+    width:28%;
+}
+.touxiang{
+    width:100%;
+    padding:0 20px;
+}
+.touxiang img{
+    width:70%;
+}
+.touxiang p{
+    padding:10px;
+    padding-left:28px;
+    font-size:0.8rem;
+    color:#B46755;
+}
+.detail-nav ul{
+    background:#Fff;
+}
+.aboutMe{
+    padding:15px;
+    line-height:24px;
+    word-wrap:break-word ;
+}
+.aboutMe p{
+    line-height:24px;
+}

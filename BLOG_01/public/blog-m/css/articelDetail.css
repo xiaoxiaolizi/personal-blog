@@ -1,0 +1,269 @@
+body{
+    background:#fff;
+}
+section{
+    width:90%;
+    margin:10px auto;
+    overflow:hidden;
+}
+.content-left{
+    width:100%;
+    background:#fff;
+}
+.content-right{
+    width:28%;
+}
+.post-title{
+    width:100%;
+    text-align:center;
+    margin:10px 0;
+    font-size:1.3rem;
+    color:#333;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+
+.detail{
+    background:#F6F6F6;
+    width:95%;
+    height:30px;
+    line-height:30px;
+    margin-top:1%;
+    font-size:0.8rem;
+    color:#5d5d5d;
+    padding:0 1%;
+}
+.detail span a{
+    margin-left:1%;
+    color:#5d5d5d;
+}
+.detail a>span{
+    color:#71A532;
+}
+.detail a:hover{
+    color:#333;
+}
+.detail a:hover span{
+    color:#FF9900;
+}
+.detail>span{
+    margin-left:15%;
+}
+.detail span:first-child{
+    margin-left:0;
+    width:100%;
+}
+.detail span>img{
+    float:left;
+    margin-top:1.4%;
+    margin-left:3%;
+}
+.contents{
+    padding:20px;
+    line-height:24px;
+    font-size:1.3rem;
+    color:#555;
+}
+.contents p{
+    width:100%;
+    font-size:16px;/*字体大小*/
+    text-indent:2em;/*首行缩进两个单位*/
+    line-height:1.5em;/*行距为1.5个单位*/
+    margin:0;/*去掉默认的段间距*/
+    word-wrap:break-word ;
+}
+.contents img{
+    max-width:90%;
+    margin:20px auto;
+}
+.contents b{
+    font-style:italic;/*转换为斜体*/
+    text-transform:capitalize;/*首字母大写,参数还有lowercase,uppercase*/
+    font-size:14px;/*字号为14px*/
+    word-spacing:-1px;/*词间距*/
+}
+.contents pre{
+    width:100%;
+    overflow:hidden;
+}
+.detail-nav{
+    overflow:hidden;
+    border-bottom:1px solid #ccc;
+}
+.detail-nav ul{
+    width:100%;
+    background:#fff;
+    float:left;
+}
+.detail-nav ul.nav-list li{
+    width:20%;
+}
+.detail-nav ul.nav-list li:last-child{
+    background:#FF9900;
+}
+.detail-nav ul.nav-list li:last-child a{
+    color:#fff;
+}
+.detail-nav .location{
+    float:right;
+    text-align:right;
+}
+.detail-nav .location li{
+    float:right;
+    width:15%;
+}
+.detail-nav .location li.to{
+    width:5%;
+    color:#999999;
+}
+.detail-nav .location li:last-child{
+    width:25%;
+    overflow:hidden;
+}
+.detail-nav .location li:last-child img{
+    float:left;
+    margin-right:5%;
+    margin-top:5%;
+}
+.detail-nav .location li:last-child span{
+    float:left;
+    color:#999999;
+}
+.detail-nav .location li:last-child a{
+    float:left;
+    width:20%;
+}
+.navigate{
+    width:90%;
+    margin:auto;
+}
+.navigate h1{
+    width:96%;
+    height:40px;
+    line-height:40px;
+    background:#fff;
+    padding-left:10px;
+}
+.navigate ul{
+    width:100%;
+    overflow:hidden;
+}
+.navigate ul li{
+    float:left;
+    width:49%;
+    height:40px;
+    line-height:40px;
+    text-align:center;
+    border-bottom:1px solid #fff;
+}
+.navigate ul li:nth-child(even){
+    border-left:1px solid #fff;
+}
+.navigate ul li a{
+    color:#fff;
+    display:inline-block;
+    width:100%;
+    height:100%;
+}
+.navigate ul li:hover{
+    border-radius:10px;
+    background:#FF9900;
+}
+.navigate ul li:last-child{
+    width:98.2%;
+}
+.greenbg{
+    background:#71A532;
+}
+.orangebg{
+    background:#FF9900;
+}
+.purplebg{
+    background:#8C49AD;
+}
+.pinkbg{
+    background:#E7769E;
+}
+.greybg{
+     background:#A98659;
+ }
+.bluebg{
+    background:#63A8E8;
+}
+.hot-comment{
+    width:90%;
+    margin:20px auto;
+}
+.click-ranking{
+    width:90%;
+    margin:20px auto;
+}
+.hot-comment h1,.click-ranking h1{
+    text-align:left;
+    font-size:20px;
+    margin-bottom:10px;
+}
+.hot-comment h1 i,.click-ranking h1 i{
+    display:inline-block;
+    width:100%;
+    border:1px solid #ccc;
+}
+.click-ranking li{
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+.click-ranking li:hover a{
+    color:red;
+    font-size:1.2rem;
+}
+.hot-comment h1 span,.click-ranking h1 span{
+    color:red;
+}
+.ds-top-threads li,.click-ranking li{
+    list-style: none;
+    height:35px;
+    line-height:35px;
+    font-size:14px;
+}
+.bdsharebuttonbox{
+    width:90%;
+    margin:40px auto;
+}
+#cyReward{
+    text-align:center;
+    margin:10px 0;
+}
+#SOHUCS .invalidity{
+    padding:0;
+}
+.post_like{
+    width:130px;
+    height:48px;
+    line-height:48px;
+    border-radius:25px;
+    background:#FE781E;
+    text-align:center;
+    margin:auto;
+    font-size:1.5rem;
+    margin-top:10px;
+}
+.post_like:hover{
+    background:#F7863B;
+}
+
+.js-count-btn{
+    color:#fff;
+}
+.js-count-btn:hover{
+    color:#fff;
+}
+.goTop{
+    position:fixed;
+    right:0;
+    bottom:0;
+}
+.commentNum a{
+    color:red;
+}
